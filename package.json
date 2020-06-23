@@ -1,0 +1,18 @@
+{
+  "name": "redisapplication",
+  "version": "1.0.0",
+  "description": "Evolucion clinica en base de datos no relacional (Redis)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pablo Solano, Berenice Guerrero, Luis Sotamba",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "redis": "^3.0.2"
+  }
+}
+

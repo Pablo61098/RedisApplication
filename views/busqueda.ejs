@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1 , shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    </head>
+    <body>
+        
+        <div class="container">
+            
+            <div class="row flex-column align-items-center mt-5">
+                <div class="my-5">
+                    <a href="/generar" class="btn btn-primary">Generar Datos</a>
+                    <a href="/borrar" class="btn btn-danger">Borrar Datos</a>
+                </div>
+                <h1>Busqueda a partir de Redis</h1>
+                <form action="/buscar" method="POST">
+                    <select name="campoBusqueda" id="" class="form-control">
+                        <option value="Evolucion">Evolucion</option>
+                        <option value="Tratamiento">Tratamiento</option>
+                        <option value="Registro">Registro</option>
+                        <option value="Medico">Medico</option>
+                        <option value="Atencion">Atencion</option>
+                        <option value="Historial">Historial</option>
+                    </select>
+                    <input name="clave" type="text" class="form-control" placeholder="Ingrese la clave de busqueda">
+                    <button class="form-control">Buscar</button>
+                </form>
+            </div >
+
+            <% if(typeof campos != 'undefined' ){ %>
+                <div class="mt-5 text-center">
+                    <strong>Informacion de: <%= campoBusqueda %></strong>
+                    <% let llaves = Object.keys(campos); %>
+                    <div class="mt-5 text-left">
+                        <% for(let i=0; i<llaves.length; i++){  %>
+                            
+                                <p><strong><%=  llaves[i] %></strong></p>
+                            
+                                <p><%=  campos[llaves[i]] %></p>
+                            
+                        <% } %>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+
+        
+
+    </body>
+</html>
